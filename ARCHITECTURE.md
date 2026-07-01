@@ -20,15 +20,24 @@ and documentation:
 | Architecture inventory | `ARCHITECTURE.md` | This file |
 | Git metadata | `.git/` | Version control |
 
-No source directories, package manifests (`package.json`, `pyproject.toml`,
-`Cargo.toml`, `go.mod`, `Gemfile`, etc.), CI configuration, or test suites are
-present on `main`.
+### Verified absent
+
+Confirmed missing across `main`, this branch, and both prior worker branches
+(`mente/men118-smoke-1`, `mente/men137-e2e-1`) via `git cat-file -e`:
+
+- Source directories (no `src/`, `app/`, `lib/`, `pkg/`, etc.).
+- Package manifests: `package.json`, `pyproject.toml`, `Cargo.toml`, `go.mod`,
+  `Gemfile`, `pom.xml`, `build.gradle`, `Package.swift`.
+- Build/runtime config: `Makefile`, `Dockerfile`, `docker-compose.yml`.
+- CI: no `.github/workflows/`, no `.circleci/`, no `.gitlab-ci.yml`.
+- Repo governance: no `LICENSE`, `CODEOWNERS`, `.gitignore`, `.gitattributes`.
+- Tests: no test suites, fixtures, or runners.
 
 ## Branches observed at audit time
 
 - `main` — baseline, contains only `README.md`.
 - `mente/men118-smoke-1` — adds `CONTRIBUTING.md` (contribution guide).
-- `mente/men137-e2e-1` — adds `HELLO-men137.md` (single-line greeting).
+- `mente/men137-e2e-1` — adds `HELLO-men137.md` (worker greeting).
 
 These branches represent prior worker smoke/E2E runs; they are not merged into
 `main` and do not contribute application components.

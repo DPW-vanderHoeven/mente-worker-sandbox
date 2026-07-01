@@ -38,9 +38,11 @@ Confirmed missing across `main`, this branch, and both prior worker branches
 - `main` — baseline, contains only `README.md`.
 - `mente/men118-smoke-1` — adds `CONTRIBUTING.md` (contribution guide).
 - `mente/men137-e2e-1` — adds `HELLO-men137.md` (worker greeting).
+- `mente/tk-7bd93c7d-2fcb-4ef7-82fc-3f62b16508c0-t1` — this branch; adds
+  `ARCHITECTURE.md` (the audit itself).
 
-These branches represent prior worker smoke/E2E runs; they are not merged into
-`main` and do not contribute application components.
+The sibling `mente/*` branches represent prior worker smoke/E2E runs; none are
+merged into `main`, and none contribute application components.
 
 ## Implications
 
